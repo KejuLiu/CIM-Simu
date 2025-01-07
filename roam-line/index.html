@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<head>
+    <title>图界mbs-漫游</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cesium.com/downloads/cesiumjs/releases/1.118/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
+    <script type="text/javascript"
+        src="https://cesium.com/downloads/cesiumjs/releases/1.118/Build/Cesium/Cesium.js"></script>
+    <script type="text/javascript" src="../libs/js/dat.gui.min.js"></script>
+    <script type="text/javascript" src="../libs/js/heatmap.min.js" ></script>
+    <script type="text/javascript" src="../libs/js/initMap.js" ></script>
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/left-side-menu.css">
+    <link rel="stylesheet" type="text/css" href="../fonts/iconfont.css">
+    <link rel="stylesheet" type="text/css" href="../css/custom.css">
+    <style>
+        body{
+            padding: 0;
+            margin: 0;
+        }
+        .buttons{
+            position: absolute;
+            top: 125px;
+            left: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="top-side-menu" style="width: 100%; height: 50px; background-color: #c55b03"  >    
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Main</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="https://www.ntu.edu.cn/">轻量级CIM系统</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="../3dtiles-highlight/index.html" role="button" data-toggle="modal" data-target="#myModal">3DTiles<span class="sr-only">(current)</span></a></li>
+                <li class="active"><a href="../heatmap-3d/index.html" role="button" data-toggle="modal" data-target="#myModal">3D热力图 <span class="sr-only">(current)</span></a></li>
+                <li class="active"><a href="index.html" role="button" data-toggle="modal" data-target="#myModal">南通大学上空漫游 <span class="sr-only">(current)</span></a></li>
+                <li class="active"><a href="../threejs-voxel/index.html" role="button" data-toggle="modal" data-target="#myModal">Threejs体渲染 <span class="sr-only">(current)</span></a></li>
+                <li class="active"><a href="../shadertoy-primitive/index.html" role="button" data-toggle="modal" data-target="#myModal">海滩3D浏览<span class="sr-only">(current)</span></a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+    </div>
+    <div id="map"></div>
+    <div class="buttons">
+        <button id="start">开始漫游</button>
+        <button id="pause">暂停/继续 漫游</button>
+        <button id="exit">停止漫游</button>
+        <div style="margin-top: 10px;">
+            <input type="range" id="speedControl" min="0.1" max="1000" step="0.1" value="10">
+            <label for="speedControl" style="color: white;">飞行速度: <span id="speedValue">10</span></label>
+        </div>
+    </div>
+    <script type="text/javascript" src="roam.js" ></script>
+    <script src="index.js"></script>
+    <script>
+        document.getElementById('speedControl').addEventListener('input', function(e) {
+            const speed = parseFloat(e.target.value);
+            document.getElementById('speedValue').textContent = speed;
+            if (window.roamObject) {
+                window.roamObject.setSpeed(speed);
+            }
+        });
+    </script>
+</body>
+</body>
