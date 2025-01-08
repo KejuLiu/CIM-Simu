@@ -1,8 +1,8 @@
 # CIM Light System Stack
 
 
-## 示例图片(./demos/computer-aided-engineering-solutions-bbm-gel-d.jpg)
-![perlin]
+## 示例图片
+![perlin](./demos/computer-aided-engineering-solutions-bbm-gel-d.jpg)
 
 ### Three.js Demo
 ![Three.js Demo](./demos/threejs.png)
