@@ -1,7 +1,7 @@
 # CIM Simu
 
 
-## 示例图片
+![HTML5](https://img.shields.io/badge/HTML5-E34F26.svg?logo=html5&logoColor=white) 
 ![perlin](./demos/computer-aided-engineering-solutions-bbm-gel-d.jpg)
 
 ### Three.js Demo
