@@ -14,7 +14,7 @@
 ## 主要贡献者
 
 <div align="center">
-  https://github.com/ooDev1ate
+    <a href='https://github.com/ooDev1ate'></a>
 </div>
 
 <div align="center">
