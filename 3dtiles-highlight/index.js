@@ -5,6 +5,8 @@
   //----------------------------------------------------------------------------------------------------
   resizeWindow();
   let viewer = mbs.utils.initMap("map");
+  //--------------
+  console.log();
   window.viewer = viewer;
   add3DTiles(
     "../libs/model/40866/tileset.json",
